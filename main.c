@@ -42,8 +42,8 @@ int main()
     printf("Lim, Jald");
     gotoxy(10,25);
     printf("Aranas, Jon Mark");
-    gotoxy(45,9);
-    printf("Press any key to continue ");
+    gotoxy(43,9);
+    printf("Press any key to continue...");
     getch();
 
     gets(buffer);
@@ -217,7 +217,7 @@ void acer_lab_1(){
     strcpy(lab1.time, time[times-1]);
 
     gotoxy(15,29);
-    printf("------------------------------------------------------------------------------------------------------------");
+    printf("--------------------------------------------------------------------------------------------------");
 
     gotoxy(15,31);
     printf("Summary:");
@@ -375,7 +375,7 @@ void acer_lab_2(){
     strcpy(lab2.time, time[times-1]);
 
     gotoxy(15,29);
-    printf("------------------------------------------------------------------------------------------------------------");
+    printf("--------------------------------------------------------------------------------------------------");
 
     gotoxy(15,31);
     printf("Summary:");
@@ -533,7 +533,7 @@ void mac_lab(){
     strcpy(mac_lab.time, time[times-1]);
 
     gotoxy(15,29);
-    printf("------------------------------------------------------------------------------------------------------------");
+    printf("--------------------------------------------------------------------------------------------------");
 
     gotoxy(15,31);
     printf("Summary:");
@@ -720,8 +720,6 @@ void terminate(){
     gotoxy(41,9);
     printf("Thank you for using our program!");
     gotoxy(10,26);
-    return 0;
+
+    exit(1);
 }
-
-
-
