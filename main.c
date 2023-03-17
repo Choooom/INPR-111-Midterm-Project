@@ -721,5 +721,5 @@ void terminate(){
     printf("Thank you for using our program!");
     gotoxy(10,26);
 
-    exit(1);
+    exit(0);
 }
