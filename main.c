@@ -10,6 +10,7 @@ void acer_lab_1();
 void acer_lab_2();
 void mac_lab();
 void reports();
+void terminate();
 
 struct info{
     char subject[50];
@@ -40,6 +41,7 @@ int main()
     gotoxy(10,24);
     printf("Lim, Jald");
     gotoxy(10,25);
+    printf("Aranas, Jon Mark");
     gotoxy(45,9);
     printf("Press any key to continue ");
     getch();
@@ -79,8 +81,7 @@ void mainMenu(){
         }else if(strcmp(strupr(choice), "D") == 0){
             reports();
         }else if(strcmp(strupr(choice), "E") == 0){
-            system("cls");
-            exit(1);
+            terminate();
         }else{
             gotoxy(15,14);
             printf("Invalid Input. Try Again.");
@@ -243,7 +244,7 @@ void acer_lab_1(){
         if(toupper(choice) == 'Y'){
             mainMenu();
         }else if(toupper(choice) == 'N'){
-            exit(1);
+            terminate();
             break;
         }else{
             gotoxy(15,37);
@@ -401,7 +402,7 @@ void acer_lab_2(){
         if(toupper(choice) == 'Y'){
             mainMenu();
         }else if(toupper(choice) == 'N'){
-            exit(1);
+            terminate();
             break;
         }else{
             gotoxy(15,37);
@@ -559,7 +560,7 @@ void mac_lab(){
         if(toupper(choice) == 'Y'){
             mainMenu();
         }else if(toupper(choice) == 'N'){
-            exit(1);
+            terminate();
             break;
         }else{
             gotoxy(15,37);
@@ -693,6 +694,33 @@ void reports(){
         reports();
     }
 
+}
+
+void terminate(){
+    system("cls");
+
+    int choice, status = 1;
+    char buffer;
+
+    gotoxy(40,7);
+    printf("---Laboratory Scheduling System---");
+
+    gotoxy(1,18);
+    printf("Made by Group 8");
+    gotoxy(1,20);
+    printf("Team Leader: Ilaida, Romille");
+    gotoxy(1,22);
+    printf("Members: Torre, John Lloyd");
+    gotoxy(10,23);
+    printf("Ong, Noriel Edward");
+    gotoxy(10,24);
+    printf("Lim, Jald");
+    gotoxy(10,25);
+    printf("Aranas, Jon Mark");
+    gotoxy(41,9);
+    printf("Thank you for using our program!");
+    gotoxy(10,26);
+    return 0;
 }
 
 
