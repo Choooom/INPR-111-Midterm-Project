@@ -3,13 +3,13 @@
 #include<stdlib.h>
 #include<windows.h>
 
-void gotoxy(int,int);
-void mainMenu();
-void acer_lab_1();
+void gotoxy(int,int); //Ong
+void mainMenu(); //Aranas
+void acer_lab_1(); //Ilaida
 void acer_lab_2();
 void mac_lab();
-void reports();
-void terminate();
+void reports(); //Torre
+void terminate(); //Lim
 
 struct info{
     char subject[50];
@@ -241,9 +241,9 @@ void acer_lab_1(){
         scanf(" %c", &choice);
 
         if(toupper(choice) == 'Y'){
-            mainMenu();
+            acer_lab_1();
         }else if(toupper(choice) == 'N'){
-            terminate();
+            mainMenu();
             break;
         }else{
             gotoxy(15,37);
@@ -294,7 +294,7 @@ void acer_lab_2(){
         gotoxy(15,16);
         printf("Invalid input. Please try again.");
         getch();
-        acer_lab_1();
+        acer_lab_2();
     }else{
         if(strcmp(input_1, "1") == 0){
             date = 1;
@@ -399,9 +399,9 @@ void acer_lab_2(){
         scanf(" %c", &choice);
 
         if(toupper(choice) == 'Y'){
-            mainMenu();
+            acer_lab_2();
         }else if(toupper(choice) == 'N'){
-            terminate();
+            mainMenu();
             break;
         }else{
             gotoxy(15,37);
@@ -452,7 +452,7 @@ void mac_lab(){
         gotoxy(15,16);
         printf("Invalid input. Please try again.");
         getch();
-        acer_lab_1();
+        mac_lab_redirect();
     }else{
         if(strcmp(input_1, "1") == 0){
             date = 1;
@@ -537,7 +537,7 @@ void mac_lab(){
     gotoxy(15,31);
     printf("Summary:");
     gotoxy(15,33);
-    printf("Acer 1 / %s / %s / %s / %s / %s", mac_lab.date, mac_lab.time, mac_lab.subject, mac_lab.section, mac_lab.teacher);
+    printf("Mac Lab / %s / %s / %s / %s / %s", mac_lab.date, mac_lab.time, mac_lab.subject, mac_lab.section, mac_lab.teacher);
 
     fpointer = fopen("Mac_Lab.txt", "a+");
 
@@ -557,9 +557,9 @@ void mac_lab(){
         scanf(" %c", &choice);
 
         if(toupper(choice) == 'Y'){
-            mainMenu();
+            mac_lab_redirect();
         }else if(toupper(choice) == 'N'){
-            terminate();
+            mainMenu();
             break;
         }else{
             gotoxy(15,37);
@@ -569,6 +569,10 @@ void mac_lab(){
             continue;
         }
     }
+}
+
+void mac_lab_redirect(){
+    mac_lab();
 }
 
 void reports(){
@@ -686,13 +690,7 @@ void reports(){
         printf("Press any key to continue...");
         getch();
         mainMenu();
-    }else{
-        gotoxy(15,13);
-        printf("Invalid input. Please try again.");
-        getch();
-        reports();
     }
-
 }
 
 void terminate(){
